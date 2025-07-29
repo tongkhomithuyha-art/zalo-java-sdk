@@ -43,12 +43,12 @@ public class ZaloOaClient extends ZaloBaseClient {
 
         String response;
         if (file != null) {
-            response = sendHttpUploadRequest(endPoint, file, sortedMap, APIConfig.DEFAULT_HEADER);
+            response = sendHttpUploadRequest(endPoint, file, sortedMap, APIConfig.createDefaultHeader());
         } else {
             if ("GET".equals(method.toUpperCase())) {
-                response = sendHttpGetRequest(endPoint, sortedMap, APIConfig.DEFAULT_HEADER);
+                response = sendHttpGetRequest(endPoint, sortedMap, APIConfig.createDefaultHeader());
             } else {
-                response = sendHttpPostRequest(endPoint, sortedMap, bodyData, APIConfig.DEFAULT_HEADER);
+                response = sendHttpPostRequest(endPoint, sortedMap, bodyData, APIConfig.createDefaultHeader());
             }
         }
         JsonObject result = null;
@@ -81,7 +81,7 @@ public class ZaloOaClient extends ZaloBaseClient {
 
         String response;
 
-        Map<String, String> headerMap = APIConfig.DEFAULT_HEADER;
+        Map<String, String> headerMap = APIConfig.createDefaultHeader();
         if (headers != null && headers.keySet() != null && headers.keySet().isEmpty() == false) {
             for (String key : headers.keySet()) {
                 String value = headers.getOrDefault(key, "");

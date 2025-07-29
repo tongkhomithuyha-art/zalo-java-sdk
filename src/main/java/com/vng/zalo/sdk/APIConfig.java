@@ -39,7 +39,6 @@ public class APIConfig {
     public static final String USER_AGENT = "zalosdk/4.1 Zalo Open API Java SDK";
     public static final String SDK_VERSION = "Java 4.1";
     public static final String SDK_SOURCE = "JavaSDK-4.1";
-    public static final Map<String, String> DEFAULT_HEADER = createDefaultHeader();
     public static String TEMPORARY_DIR = null;
 
     public static Map<String, String> createDefaultHeader() {
